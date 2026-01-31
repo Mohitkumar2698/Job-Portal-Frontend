@@ -136,22 +136,26 @@ li {
   letter-spacing: 2px;
 }
 
-/* Navbar Styles */
+/* Navbar - Enhanced with Tailwind fallback */
 .navbar {
   height: 12vh;
-  display: flex;
-  justify-content: space-between;
-  padding-inline: 40px;
-  align-items: center;
+  background: var(--background-dark);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(55, 65, 81, 0.5);
   position: sticky;
   top: 0;
-  background-color: var(--background-dark);
-  box-shadow: 0 4px 6px #0000001a;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo glow effect on hover */
+.navbar a[class*="text-4xl"]:hover {
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
 }
 
 .navbar .hamburger {
   display: none;
+  color: var(--button-text);
 }
 
 .navbar .navlogo {
@@ -194,89 +198,10 @@ li {
   text-decoration: underline;
 }
 
-/* Responsive Styles */
-@media (max-width: 1320px) {
-  .navbar .navlogo {
-    width: auto;
-  }
-
-  .navbar .navlogo img {
-    width: 100px;
-  }
-}
-
-@media (max-width: 1140px) {
-  .navbar {
-    padding: 10px 20px;
-    flex-wrap: nowrap;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .navbar .navlogo {
-    order: 0;
-    flex: 0 1 auto;
-  }
-
-  .navbar .hamburger {
-    display: block;
-
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  .navbar .links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-    padding-top: 20px;
-  }
-
-  .navbar.show_navbar .links {
-    display: flex;
-  }
-}
-
-@media (max-width: 920px) {
-  .navbar {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar .links ul {
-    align-items: center;
-  }
-
-  .navbar .links ul li a {
-    font-size: 16px;
-  }
-  .links {
-    margin-bottom: 25px;
-    margin-right: 20px;
-  }
-
-  .show_navbar {
-    height: auto;
-  }
-  .hamburger {
-    margin-bottom: 7px;
-  }
-}
-
-@media (max-width: 470px) {
-  .navbar .navlogo {
-    gap: 10px;
-  }
-
-  .navbar .navlogo img {
-    width: 60px;
-  }
-
-  .navbar {
-    height: auto;
+/* Smooth mobile menu animation */
+@media (max-width: 768px) {
+  .navbar .mobile-menu {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
