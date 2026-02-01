@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import Spinner from "../Spinner";
@@ -10,7 +10,7 @@ import {
 } from "../../store/slices/jobSlice";
 const MyJobs = () => {
   const { loading, error, myJobs, message } = useSelector(
-    (state) => state.jobs
+    (state) => state.jobs,
   );
   const dispatch = useDispatch();
   useEffect(() => {
@@ -80,7 +80,7 @@ const MyJobs = () => {
                   )}
                   <button
                     className="btn"
-                    style={{marginTop:"20px"}}
+                    style={{ marginTop: "20px" }}
                     onClick={() => handleDeleteJob(element._id)}
                   >
                     Delete Job

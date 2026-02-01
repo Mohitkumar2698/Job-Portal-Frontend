@@ -163,7 +163,7 @@ const JobPost = () => {
             Job Type <span className="text-red-500">*</span>
           </label>
           <select value={jobType} onChange={(e) => setJobType(e.target.value)}>
-            <option value="">--Select Job Type--</option>
+            <option value="">Select Job Type</option>
             <option value="Full-Time">Full-Time</option>
             <option value="Part-Time">Part-Time</option>
           </select>
@@ -176,7 +176,7 @@ const JobPost = () => {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           >
-            <option value="">--Select Job Type--</option>
+            <option value="">Select Job Type</option>
             {Cities.map((element, index) => {
               return (
                 <option key={index} value={element}>
@@ -261,7 +261,7 @@ const JobPost = () => {
             value={jobNiche}
             onChange={(e) => setJobNiche(e.target.value)}
           >
-            <option value="">--Select Job Niche--</option>
+            <option value="">Select Job Niche</option>
             {nicheArray.map((element) => {
               return <option value={element}>{element}</option>;
             })}
@@ -289,7 +289,7 @@ const JobPost = () => {
             value={hiringMultipleCandidate}
             onChange={(e) => setHiringMultipleCandidate(e.target.value)}
           >
-            <option value="">--Hiring Mulitple Candidates --</option>
+            <option value="">Hiring Mulitple Candidates </option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>

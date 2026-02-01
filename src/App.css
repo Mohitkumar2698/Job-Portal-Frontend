@@ -843,8 +843,9 @@ footer div ul a span {
 .authPage .container form .inputTag div input,
 .authPage .container form .inputTag div select,
 .authPage .container form .inputTag div textarea {
-  background: #87878778;
+  background: #87878790;
   padding: 8px;
+  border-radius: 2px;
   border: none;
   width: 100%;
   /* height: 100%; */
@@ -853,8 +854,8 @@ footer div ul a span {
 .authPage .container form .inputTag div input:focus,
 .authPage .container form .inputTag div select:focus,
 .authPage .container form .inputTag div textarea:focus {
+  background: var(--primary-color);
   outline: none;
-  background: #87878778;
 }
 
 .authPage .container form .inputTag div svg {
@@ -1134,7 +1135,7 @@ footer div ul a span {
 
 .jobs .container .jobs_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-gap: 10px;
   /* padding: 50px 0; */
   width: 100%;
@@ -1403,12 +1404,20 @@ footer div ul a span {
   font-size: 12px;
 }
 
+.account_components div input::placeholder {
+  color: #ffffff90;
+}
+
+.account_components div textarea::placeholder {
+  color: #ffffff90;
+}
+
 .account_components div input,
 .account_components div select,
 .account_components div textarea {
   border: 1px solid var(--accent-color);
   border-radius: 10px;
-  color: #ffffff80;
+  color: #ffffff90;
   padding: 10px 10px;
 }
 
@@ -1416,6 +1425,8 @@ footer div ul a span {
 .account_components div select:focus,
 .account_components div textarea:focus {
   outline: none;
+  background-color: rgb(17 24 39);
+  /* color: #fff; */
 }
 
 .sidebar_icon {
@@ -1487,7 +1498,7 @@ footer div ul a span {
   flex-direction: column;
   gap: 5px;
   font-size: 16px;
-  color: gray;
+  color: #ffffff80;
 }
 
 .account_components .applications_container .card .sub-sec span {
@@ -1617,38 +1628,60 @@ footer div ul a span {
 
 .application_page {
   display: flex;
-  gap: 40px;
-  max-width: 1500px;
-  min-width: 1500px;
+  gap: 20px;
+  background-color: rgb(15, 23, 42);
+  padding-left: 100px;
+  padding-right: 100px;
+  color: var(--button-text);
+  /* max-width: 1500px;  */
+  /* min-width: 1500px; */
   margin: 0 auto;
 }
 
 .application_page form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .application_page form h3 {
   font-size: 24px;
   font-weight: 500;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .application_page form div {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 5px;
 }
 
 .application_page form div input {
-  padding: 7px 4px;
+  padding: 7px 7px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: #ffffff99;
+}
+
+.application_page form div input::placeholder {
+  color: #ffffff99;
+}
+
+.application_page form div textarea {
+  padding: 7px 7px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: #ffffff99;
+}
+
+.application_page form div textarea::placeholder {
+  color: #ffffff99;
 }
 
 .application_page .job-details,
 .application_page form {
   flex: 1;
-  padding: 50px 0;
+  padding: 25px 0;
 }
 
 .application_page .job-details {
@@ -1659,7 +1692,7 @@ footer div ul a span {
 .application_page .job-details header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 }
 
 .application_page .job-details h3 {
@@ -1674,7 +1707,7 @@ footer div ul a span {
 }
 
 hr {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .application_page .job-details section {

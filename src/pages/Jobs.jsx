@@ -12,7 +12,7 @@ const Jobs = () => {
   const [niche, SetNiche] = useState("");
   const [selectedNiche, setSelectedNiche] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
-  const [salaryRange, setSalaryRange] = useState([0, 500000]);
+  const [salaryRange, setSalaryRange] = useState([0, 10000000]); // ✅ ₹1 Crore max
   const [sortBy, setSortBy] = useState("newest");
   const [savedJobs, setSavedJobs] = useState([]);
 
@@ -56,7 +56,7 @@ const Jobs = () => {
     SetNiche("");
     setSelectedNiche("");
     setSearchKeyword("");
-    setSalaryRange([0, 500000]);
+    setSalaryRange([0, 10000000]);
     setSortBy("newest");
     dispatch(fetchjobs("", "", ""));
   };
@@ -223,14 +223,14 @@ const Jobs = () => {
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
             <label className="text-white text-sm font-medium mb-3 block">
               Salary Range: ₹{salaryRange[0].toLocaleString()} - ₹
-              {salaryRange[1].toLocaleString()}
+              {(salaryRange[1] / 100000).toLocaleString()}LPA
             </label>
             <div className="flex gap-4 items-center">
               <input
                 type="range"
                 min="0"
-                max="500000"
-                step="10000"
+                max="10000000" // ✅ Changed from 500000
+                step="500000" // ✅ ₹5L steps
                 value={salaryRange[0]}
                 onChange={(e) =>
                   setSalaryRange([parseInt(e.target.value), salaryRange[1]])
@@ -240,8 +240,8 @@ const Jobs = () => {
               <input
                 type="range"
                 min="0"
-                max="500000"
-                step="10000"
+                max="10000000" // ✅ Changed from 500000
+                step="500000" // ✅ ₹5L steps
                 value={salaryRange[1]}
                 onChange={(e) =>
                   setSalaryRange([salaryRange[0], parseInt(e.target.value)])
@@ -284,7 +284,7 @@ const Jobs = () => {
             niche ||
             searchKeyword ||
             salaryRange[0] !== 0 ||
-            salaryRange[1] !== 500000) && (
+            salaryRange[1] !== 10000000) && (
             <div className="flex justify-end">
               <button
                 onClick={handleClearFilters}
